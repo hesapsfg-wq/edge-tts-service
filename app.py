@@ -24,7 +24,7 @@ def format_srt_time(centiseconds):
 
 
 async def generate_speech(text: str, voice: str, rate: str, pitch: str):
-    communicate = edge_tts.Communicate(text, voice, rate=rate, pitch=pitch)
+communicate = edge_tts.Communicate(text, voice, rate=rate, pitch=pitch, boundary="WordBoundary")
     audio_bytes = io.BytesIO()
     word_boundaries = []
 
